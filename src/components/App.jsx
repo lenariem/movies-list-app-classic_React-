@@ -6,8 +6,19 @@ import SearchPanel from "./SearchPanel"
 import PostFilter from "./PostFilter"
 import PostList from "./PostList"
 import AddForm from "./AddForm"
+
 import "../css/app.css"
 
+/* import styled from 'styled-components'
+const AppBlock = styled.div`
+  margin: 0 auto;
+  max-width: 800px;
+`
+
+inheritance of stiles(will not touch original component AppBlock)
+const StyledAppBlock = styled(AppBlock)`
+  background-color: grey;
+`  */
 
 export default function App() {
 
