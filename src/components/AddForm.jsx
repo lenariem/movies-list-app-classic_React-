@@ -21,6 +21,9 @@ export default class AddForm extends Component {
     onSubmit(e) {
         e.preventDefault();
         this.props.onAdd(this.state.text)
+        this.setState({
+            text: ''
+        })
     }
     
     render(){
@@ -34,6 +37,7 @@ export default class AddForm extends Component {
                     placeholder="What movie are you going to watch?"
                     className="form-control new-post-label"
                     onChange={this.onValueChange}
+                    value={this.state.text}
                 />
                 <button 
                     className="btn-outline-secondary" 

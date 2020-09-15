@@ -25,14 +25,17 @@ export default class App extends Component {
     super(props);
     this.state = {
       data: [
-        {label: "Hello World", important: false, like: false, id: randomstring.generate(5),},
-        { label: "Hello Again", important: true, like: false, id: randomstring.generate(5) }
-      ]
+        {label: "Titanic", important: false, like: false, id: randomstring.generate(5),},
+        { label: "Inception (advice from Anna)", important: true, like: false, id: randomstring.generate(5) },
+        { label: "Tenet (new,cinema)", important: true, like: false, id: randomstring.generate(5) }
+      ],
+      term: ''
     };
     this.deleteItem = this.deleteItem.bind(this);
     this.onAdd = this.onAdd.bind(this);
     this.onToggleImportant = this.onToggleImportant.bind(this);
     this.onToggleLiked = this.onToggleLiked.bind(this);
+    this.onUpdateSearch = this.onUpdateSearch.bind(this);
   }
 
   deleteItem(id) {
@@ -51,18 +54,20 @@ export default class App extends Component {
   }
 
   onAdd(body) {
-    const newItem = {
-      label: body,
-      important: true,
-      like: false,
-      id: randomstring.generate(5)
-    }
-    this.setState(({data}) => {
-      const newArr = [...data, newItem];
-      return {
-        data: newArr
+    if(body.length > 0) {
+      const newItem = {
+        label: body,
+        important: true,
+        like: false,
+        id: randomstring.generate(5)
       }
-    })
+      this.setState(({data}) => {
+        const newArr = [...data, newItem];
+        return {
+          data: newArr
+        }
+      })
+    }
   }
 
   onToggleImportant(id) {
@@ -89,11 +94,28 @@ export default class App extends Component {
     });
   }
 
+  searchPost(items, term) {
+    //if empty or user deleted term
+    if(term.length === 0) {
+      return items
+    }
+
+    return items.filter(item => {
+      return item.label.indexOf(term) > -1
+    })
+  }
+
+  onUpdateSearch(term) {
+    this.setState({term})
+  }
+
   render() {
-    const {data} = this.state;
+    const {data, term} = this.state;
     const liked = data.filter(item => item.like).length;
     const watched = data.filter(item => !item.important).length;
     const allPosts = data.length;
+    
+    const visiblePosts = this.searchPost(data, term)
 
     return (
       <div className="app">
@@ -103,11 +125,11 @@ export default class App extends Component {
           allPosts={allPosts}
         />
         <div className="search-panel d-flex">
-          <SearchPanel />
+          <SearchPanel onUpdateSearch={this.onUpdateSearch}/>
           <PostFilter />
         </div>
         <PostList 
-          posts={this.state.data} 
+          posts={visiblePosts} 
           onDelete={this.deleteItem} 
           onToggleImportant={this.onToggleImportant}
           onToggleLiked={this.onToggleLiked}
