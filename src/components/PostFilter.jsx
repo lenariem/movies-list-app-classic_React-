@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import "../css/PostFilter.css"
 
 /* 
 import { Button } from "reactstrap";
