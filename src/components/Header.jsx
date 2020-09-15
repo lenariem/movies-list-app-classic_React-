@@ -18,12 +18,12 @@ const AppHeader = styled.div`
     }
 `
 
-export default function Header() {
+export default function Header({liked, watched, allPosts}) {
     return (
         /*  <AppHeader as='a'  will change header to a tag*/
         <AppHeader colored>
             <h1>List of Lena's movies</h1>
-            <h2>5 posts, watched 0, liked 0</h2>
+            <h2>{allPosts} posts, watched {watched}, liked {liked}</h2>
         </AppHeader>
     )
 }
