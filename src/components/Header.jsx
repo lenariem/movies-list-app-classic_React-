@@ -7,7 +7,7 @@ const AppHeader = styled.div`
     justify-content: space-between;
     h1 {
         font-size: 26px;
-        color: ${props => props.colored ? 'red' : 'black'};
+        color: ${props => props.colored ? 'black' : 'red'};
         :hover {
             color: blue;
         }

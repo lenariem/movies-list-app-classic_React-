@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "../css/post-list-item.css";
+import "../css/PostListItem.css";
 
 export default class PostListItem extends Component {
     constructor(props) {
@@ -25,7 +25,7 @@ export default class PostListItem extends Component {
     }
 
     render() {
-        const {label} = this.props;
+        const {label, onDelete} = this.props;
         const {important, like} = this.state;
 
         let classNames = "app-list-item d-flex justify-content-between";
@@ -51,7 +51,8 @@ export default class PostListItem extends Component {
                 </button>
                 <button 
                 type="button" 
-                className="btn-trash btn-sm">
+                className="btn-trash btn-sm"
+                onClick={onDelete}>
                     <i className="fa fa-trash-o"></i>
                 </button>
                 <i className="fa fa-heart"></i>

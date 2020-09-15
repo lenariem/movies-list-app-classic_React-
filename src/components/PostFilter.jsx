@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "reactstrap";
-import "../css/post-status-filter.css"
+import "../css/PostFilter.css"
 
 export default function PostFilter() {
     return (

@@ -1,13 +1,13 @@
-import React from 'react'
-import randomstring from 'randomstring';
+import React, { Component } from "react";
+import randomstring from "randomstring";
 
-import Header from "./Header"
-import SearchPanel from "./SearchPanel"
-import PostFilter from "./PostFilter"
-import PostList from "./PostList"
-import AddForm from "./AddForm"
+import Header from "./Header";
+import SearchPanel from "./SearchPanel";
+import PostFilter from "./PostFilter";
+import PostList from "./PostList";
+import AddForm from "./AddForm";
 
-import "../css/app.css"
+import "../css/App.css";
 
 /* import styled from 'styled-components'
 const AppBlock = styled.div`
@@ -20,22 +20,60 @@ const StyledAppBlock = styled(AppBlock)`
   background-color: grey;
 `  */
 
-export default function App() {
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: [
+        {label: "Hello World", important: false, id: randomstring.generate(5),},
+        { label: "Hello Again", important: true, id: randomstring.generate(5) }
+      ]
+    };
+    this.deleteItem = this.deleteItem.bind(this);
+    this.addItem = this.addItem.bind(this);
+  }
 
-  const data = [
-    {label: "Hello World", important: false, id: randomstring.generate(5)},
-    {label: "Hello Again", important: true, id: randomstring.generate(5)}
-  ]
+  deleteItem(id) {
+    this.setState(({ data }) => {
+      const index = data.findIndex(element => element.id === id);
+      /* const before = data.slice(0, index);
+      const after = data.slice(index + 1);
+      const newArr = [...before, ...after]; */
 
-  return (
-    <div className="app">
+      const newArr = [...data.slice(0, index), ...data.slice(index + 1)];
+
+      return {
+        data: newArr
+      }
+    });
+  }
+
+  addItem(body) {
+    const newItem = {
+      label: body,
+      important: false,
+      id: randomstring.generate(5)
+    }
+    this.setState(({data}) => {
+      const newArr = [...data, newItem];
+      return {
+        data: newArr
+      }
+    })
+  }
+
+  render() {
+    return (
+      <div className="app">
         <Header />
         <div className="search-panel d-flex">
-            <SearchPanel />
-            <PostFilter />
+          <SearchPanel />
+          <PostFilter />
         </div>
-        <PostList posts={data}/>
-        <AddForm />
-    </div>
-  )
+        <PostList posts={this.state.data} onDelete={this.deleteItem} />
+        <AddForm 
+          onAdd={this.addItem}/>
+      </div>
+    );
+  }
 }

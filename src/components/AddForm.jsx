@@ -1,9 +1,9 @@
 import React from 'react'
-import "../css/post-add-form.css"
+import "../css/AddForm.css"
 
-export default function AddForm() {
+export default function AddForm({addItem}) {
     return (
-        <form className="bottom-panel d-flex">
+        <div className="bottom-panel d-flex">
             <input 
                 type="text"
                 placeholder="What movie are you going to watch?"
@@ -11,8 +11,9 @@ export default function AddForm() {
             />
             <button 
                 className="btn-outline-secondary" 
-                type="submit">
+                type="submit"
+                onClick={() => addItem('Hello')}>
                 Add</button>
-        </form>
+        </div>
     )
 }
