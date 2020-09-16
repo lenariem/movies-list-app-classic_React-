@@ -9,6 +9,7 @@ import AddForm from "./AddForm";
 
 import "../css/App.css";
 
+
 /* import styled from 'styled-components'
 const AppBlock = styled.div`
   margin: 0 auto;
@@ -25,7 +26,7 @@ export default class App extends Component {
     super(props);
     this.state = {
       data: [
-        {label: "Titanic", important: false, like: false, id: randomstring.generate(5),},
+        {label: "Titanic(Netflix)", important: false, like: false, id: randomstring.generate(5),},
         { label: "Inception (advice from Anna)", important: true, like: false, id: randomstring.generate(5) },
         { label: "Tenet (new,cinema)", important: true, like: false, id: randomstring.generate(5) }
       ],
