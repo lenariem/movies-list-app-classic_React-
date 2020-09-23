@@ -7,26 +7,19 @@ import PostFilter from "./PostFilter";
 import PostList from "./PostList";
 import AddForm from "./AddForm";
 
-import "../css/App.css";
+import styled from 'styled-components';
 
-
-/* import styled from 'styled-components'
 const AppBlock = styled.div`
   margin: 0 auto;
   max-width: 800px;
-`
-
-inheritance of stiles(will not touch original component AppBlock)
-const StyledAppBlock = styled(AppBlock)`
-  background-color: grey;
-`  */
+`;
 
 export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       data: [
-        {label: "Titanic(Netflix)", important: false, like: false, id: randomstring.generate(5),},
+        { label: "Titanic(Netflix)", important: false, like: false, id: randomstring.generate(5),},
         { label: "Inception (advice from Anna)", important: true, like: false, id: randomstring.generate(5) },
         { label: "Tenet (new,cinema)", important: true, like: false, id: randomstring.generate(5) }
       ],
@@ -44,12 +37,7 @@ export default class App extends Component {
   deleteItem(id) {
     this.setState(({ data }) => {
       const index = data.findIndex(element => element.id === id);
-      /* const before = data.slice(0, index);
-      const after = data.slice(index + 1);
-      const newArr = [...before, ...after]; */
-
       const newArr = [...data.slice(0, index), ...data.slice(index + 1)];
-
       return {
         data: newArr
       }
@@ -102,10 +90,8 @@ export default class App extends Component {
     if(term.length === 0) {
       return items
     }
-    
     return items.filter(item => {
       return item.label.toLowerCase().includes(term)
-      //return item.label.indexOf(term) > -1
     })
   }
 
@@ -130,11 +116,10 @@ export default class App extends Component {
     const liked = data.filter(item => item.like).length;
     const watched = data.filter(item => !item.important).length;
     const allPosts = data.length;
-    
     const visiblePosts = this.filterPost(this.searchPost(data, term), filter)
 
     return (
-      <div className="app">
+      <AppBlock>
         <Header 
           liked={liked}
           watched={watched}
@@ -156,7 +141,7 @@ export default class App extends Component {
         <AddForm 
           onAdd={this.onAdd}
         />
-      </div>
+      </AppBlock>
     );
   }
 }
