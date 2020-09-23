@@ -15,9 +15,7 @@ const AppBlock = styled.div`
 `;
 
 export default class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
+  state = {
       data: [
         { label: "Titanic(Netflix)", important: false, like: false, id: randomstring.generate(5),},
         { label: "Inception (advice from Anna)", important: true, like: false, id: randomstring.generate(5) },
@@ -25,16 +23,10 @@ export default class App extends Component {
       ],
       term: '',
       filter: 'all'
-    };
-    this.deleteItem = this.deleteItem.bind(this);
-    this.onAdd = this.onAdd.bind(this);
-    this.onToggleImportant = this.onToggleImportant.bind(this);
-    this.onToggleLiked = this.onToggleLiked.bind(this);
-    this.onUpdateSearch = this.onUpdateSearch.bind(this);
-    this.onFilterSelect = this.onFilterSelect.bind(this);
-  }
+  };
+  
 
-  deleteItem(id) {
+  deleteItem = (id) => {
     this.setState(({ data }) => {
       const index = data.findIndex(element => element.id === id);
       const newArr = [...data.slice(0, index), ...data.slice(index + 1)];
@@ -44,7 +36,7 @@ export default class App extends Component {
     });
   }
 
-  onAdd(body) {
+  onAdd = (body) => {
     if(body.length > 0) {
       const newItem = {
         label: body,
@@ -61,7 +53,7 @@ export default class App extends Component {
     }
   }
 
-  onToggleImportant(id) {
+  onToggleImportant = (id) => {
     this.setState(({data}) => {
       const index = data.findIndex(element => element.id === id);
       const old = data[index];
@@ -73,7 +65,7 @@ export default class App extends Component {
     });
   }
 
-  onToggleLiked(id) {
+  onToggleLiked = (id) => {
     this.setState(({data}) => {
       const index = data.findIndex(element => element.id === id);
       const old = data[index];
@@ -85,7 +77,7 @@ export default class App extends Component {
     });
   }
 
-  searchPost(items, term) {
+  searchPost = (items, term) => {
     //if empty or user deleted term
     if(term.length === 0) {
       return items
@@ -95,7 +87,7 @@ export default class App extends Component {
     })
   }
 
-  filterPost(items, filter) {
+  filterPost = (items, filter) => {
     if (filter === 'like') {
       return items.filter(item => item.like)
     } else {
@@ -103,11 +95,11 @@ export default class App extends Component {
     }
   }
 
-  onUpdateSearch(term) {
+  onUpdateSearch = (term) => {
     this.setState({term})
   }
 
-  onFilterSelect(filter) {
+  onFilterSelect = (filter) => {
     this.setState({filter})
   }
 
@@ -117,6 +109,7 @@ export default class App extends Component {
     const watched = data.filter(item => !item.important).length;
     const allPosts = data.length;
     const visiblePosts = this.filterPost(this.searchPost(data, term), filter)
+
 
     return (
       <AppBlock>

@@ -12,13 +12,10 @@ const SearchPanelBlock = styled.div`
 }`;
 
 export default class SearchPanel extends Component {
-constructor(props) {
-  super(props);
-  this.state = {
-    term: "",
+  state = {
+      term: "",
   };
-  this.onUpdateSearch = this.onUpdateSearch.bind(this);
-}
+  
 
 onUpdateSearch(e) {
   const term = e.target.value.toLowerCase();
@@ -27,6 +24,7 @@ onUpdateSearch(e) {
   this.props.onUpdateSearch(term);
 }
 
+
 render() {
   return (
     <SearchPanelBlock>
@@ -34,7 +32,7 @@ render() {
         className="form-control search-input"
         type="text"
         placeholder="Search in your posts..."
-        onChange={this.onUpdateSearch}
+        onChange={this.onUpdateSearch.bind(this)}
       />
     </SearchPanelBlock>
   );

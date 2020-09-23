@@ -12,23 +12,17 @@ const FormBlock = styled.div`
   }`;
 
 export default class AddForm extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
+  state = {
       text: "",
-    };
+  };
 
-    this.onValueChange = this.onValueChange.bind(this);
-    this.onSubmit = this.onSubmit.bind(this);
-  }
-
-  onValueChange(e) {
+  onValueChange = (e) => {
     this.setState({
       text: e.target.value,
     });
   }
 
-  onSubmit(e) {
+  onSubmit = (e) => {
     e.preventDefault();
     this.props.onAdd(this.state.text);
     this.setState({
