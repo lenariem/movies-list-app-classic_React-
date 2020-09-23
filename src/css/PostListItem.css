@@ -15,7 +15,7 @@
     outline: none;
 }
 .app-list-item .btn-star {
-    color: #FFD700;
+    color:  #e27b1b;
 }
 .app-list-item .btn-trash {
     color: red;
@@ -46,7 +46,7 @@
 }
 
 .app-list-item.important .app-list-item-label {
-  color: #FFD700;
+  color: #e27b1b;
 }
 
 .app-list-item.important .btn-star {
