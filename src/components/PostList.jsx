@@ -33,6 +33,7 @@ const elements = posts.map((item) => {
 return (
   <PostListBlock>
     <ListGroup className="app-list">{elements}</ListGroup>
+    <p>*to mark as liked click on movie name</p>
   </PostListBlock>
 );
 }

@@ -22,7 +22,7 @@ export default function PostListItem({label,onDelete,onToggleImportant,onToggleL
             className="btn-star btn-sm"
             onClick={onToggleImportant}
           >
-            <i className="fa fa-star"></i>
+            <i className ="fa fa-check-square-o" aria-hidden="true"></i>
           </button>
           <button type="button" className="btn-trash btn-sm" onClick={onDelete}>
             <i className="fa fa-trash-o"></i>
