@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/lenariem/movies-list-app-hooks_classic-React/static/css/main.9ee520c6.chunk.css",
-    "main.js": "/lenariem/movies-list-app-hooks_classic-React/static/js/main.4923c902.chunk.js",
-    "main.js.map": "/lenariem/movies-list-app-hooks_classic-React/static/js/main.4923c902.chunk.js.map",
-    "runtime-main.js": "/lenariem/movies-list-app-hooks_classic-React/static/js/runtime-main.232c6e98.js",
-    "runtime-main.js.map": "/lenariem/movies-list-app-hooks_classic-React/static/js/runtime-main.232c6e98.js.map",
-    "static/css/2.8aa5a7f8.chunk.css": "/lenariem/movies-list-app-hooks_classic-React/static/css/2.8aa5a7f8.chunk.css",
-    "static/js/2.a481f382.chunk.js": "/lenariem/movies-list-app-hooks_classic-React/static/js/2.a481f382.chunk.js",
-    "static/js/2.a481f382.chunk.js.map": "/lenariem/movies-list-app-hooks_classic-React/static/js/2.a481f382.chunk.js.map",
-    "index.html": "/lenariem/movies-list-app-hooks_classic-React/index.html",
-    "precache-manifest.dafd7e26300ab817d470132d4b1897b6.js": "/lenariem/movies-list-app-hooks_classic-React/precache-manifest.dafd7e26300ab817d470132d4b1897b6.js",
-    "service-worker.js": "/lenariem/movies-list-app-hooks_classic-React/service-worker.js",
-    "static/css/2.8aa5a7f8.chunk.css.map": "/lenariem/movies-list-app-hooks_classic-React/static/css/2.8aa5a7f8.chunk.css.map",
-    "static/css/main.9ee520c6.chunk.css.map": "/lenariem/movies-list-app-hooks_classic-React/static/css/main.9ee520c6.chunk.css.map",
-    "static/js/2.a481f382.chunk.js.LICENSE.txt": "/lenariem/movies-list-app-hooks_classic-React/static/js/2.a481f382.chunk.js.LICENSE.txt"
+    "main.css": "./static/css/main.9ee520c6.chunk.css",
+    "main.js": "./static/js/main.4923c902.chunk.js",
+    "main.js.map": "./static/js/main.4923c902.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.bfb8e287.js",
+    "runtime-main.js.map": "./static/js/runtime-main.bfb8e287.js.map",
+    "static/css/2.8aa5a7f8.chunk.css": "./static/css/2.8aa5a7f8.chunk.css",
+    "static/js/2.2dabe5ba.chunk.js": "./static/js/2.2dabe5ba.chunk.js",
+    "static/js/2.2dabe5ba.chunk.js.map": "./static/js/2.2dabe5ba.chunk.js.map",
+    "index.html": "./index.html",
+    "precache-manifest.e52d7baaf946b6249605aee60480f4fe.js": "./precache-manifest.e52d7baaf946b6249605aee60480f4fe.js",
+    "service-worker.js": "./service-worker.js",
+    "static/css/2.8aa5a7f8.chunk.css.map": "./static/css/2.8aa5a7f8.chunk.css.map",
+    "static/css/main.9ee520c6.chunk.css.map": "./static/css/main.9ee520c6.chunk.css.map",
+    "static/js/2.2dabe5ba.chunk.js.LICENSE.txt": "./static/js/2.2dabe5ba.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.232c6e98.js",
+    "static/js/runtime-main.bfb8e287.js",
     "static/css/2.8aa5a7f8.chunk.css",
-    "static/js/2.a481f382.chunk.js",
+    "static/js/2.2dabe5ba.chunk.js",
     "static/css/main.9ee520c6.chunk.css",
     "static/js/main.4923c902.chunk.js"
   ]
