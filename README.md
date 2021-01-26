@@ -1,11 +1,17 @@
-### In this application user can manage list of movies, which he is going to watch.
+# Movie List React App
 
-It is possible: 
-* to mark as watched, liked;
-* add new item and delete;
-* filter and search.
+### In this application user can manage a list of movies, which he wants to watch.
 
-App is written on classic React and used styled Components
+**to take a look please click this link**
 
-## to take a look click this link please
 https://lenariem.github.io/movies-list-app_classic-React/
+
+### Technologies used:
+* ReactJS;
+* JavaScript;
+* CSS
+
+### User can:
+* add and delete items;
+* mark as liked(click on movie name) and watched;
+* filter and search in the list;
